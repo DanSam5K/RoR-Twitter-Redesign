@@ -1,0 +1,38 @@
+<div class="home-user">
+  <div class="middle-section container">
+    <div class="tweet-section">
+      <h4>What's Happening?</h4>
+      <div>
+        <%= form_for @opinion do |opinion| %>
+          <%= opinion.text_field :text, class:"tweet", id:"text"%>
+          <%= opinion.submit "Tweet", class: "btn text-btn" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="new-tweets">
+      <h4> NEW OPINIONS </h4>
+      <% Opinion.newsfeed_opinions.each do |opinions|%>
+        <div class="user-opinions">
+          <div class="user-details"> 
+            <h5><%= link_to opinions.author.username, user_path(opinions.author.id) %></h5>
+            <span><%= opinions.text %></span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="rightbar-home">
+    <h4>WHO TO FOLLOW</h4>
+    <% current_user.not_following.each do |f| %>
+      <div class="user-section">
+        <div class="user-photo">
+          <%= avatar_for(f) %>
+        </div>  
+        <div class="user-details">
+          <%= link_to f.username, user_path(f.id) %>
+          <%= f.fullname %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
