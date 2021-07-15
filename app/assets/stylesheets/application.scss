@@ -501,5 +501,123 @@ body {
     }
   }
 
-  
+  .rightbar-user {
+    width: 310px;
+    border-left: 1px solid $border-following;
+
+    .user-det {
+      padding: 20px;
+
+      .photo-adduser {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        a {
+          font-size: 40px;
+        }
+
+        span {
+          color: $border-following;
+          font-size: 40px;
+          justify-content: center;
+          display: flex;
+        }
+      }
+
+      .username-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+          padding-top: 10px;
+        }
+      }
+
+      .profile-photo {
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 50px;
+        background-color: $new-tweets;
+      }
+    }
+
+    .followed_by {
+      padding: 20px;
+
+      span {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-following;
+        width: 100%;
+        display: block;
+      }
+
+      .follower-det {
+        display: flex;
+        padding-top: 20px;
+
+        img {
+          width: 60px;
+          height: 60px;
+          margin-right: 20px;
+          background-color: $new-tweets;
+          object-fit: cover;
+          border-radius: 30px;
+        }
+
+        .follower-name {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            color: $font-color;
+          }
+
+          a:hover {
+            cursor: pointer;
+            text-decoration: none;
+          }
+
+          a:first-child {
+            color: $font-color;
+            font-weight: bold;
+            padding-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    .tweets-follows {
+      display: flex;
+      justify-content: space-evenly;
+      border-top: 1px solid $border-following;
+      border-bottom: 1px solid $border-following;
+      flex-flow: wrap;
+
+      .line {
+        width: 1px;
+        background-color: $border-following;
+      }
+
+      span {
+        margin-bottom: 20px;
+      }
+
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $border-following;
+        width: 33%;
+
+        span:first-child {
+          margin: 20px 0 0 0;
+          color: $font-color;
+        }
+      }
+    }
+  }
 }
