@@ -47,3 +47,13 @@ $signin-background: #f3f4f7;
 @mixin background {
   background-color: #f0f1f1;
 }
+
+.login-background {
+  background-image: linear-gradient(to bottom right, #1a2f4b, #338bce);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  padding: 80px;
+
+  @include text;
+}
