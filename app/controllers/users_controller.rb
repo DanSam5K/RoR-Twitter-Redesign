@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:user_followers).includes(:user_followings).includes(:created_opinions).find(params[:id])
+    @user = User.includes(:user_followers).includes(:user_followed).includes(:created_opinions).find(params[:id])
   end
 
   def edit
