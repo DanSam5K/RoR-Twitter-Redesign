@@ -8,15 +8,15 @@ class User < ApplicationRecord
   has_many :followers, foreign_key: :follower_id, class_name: 'Following'
   has_many :user_followers, through: :followers, source: :follower
 
-  has_many :followings, foreign_key: :following_id, class_name: 'Following'
-  has_many :user_followings, through: :followings, source: :following
+  has_many :followed, foreign_key: :followed_id, class_name: 'Following'
+  has_many :user_followed, through: :followed, source: :followed
 
   def not_following
-    User.all.where.not(id: user_followings.select(:id)).where.not(id: id).order(created_at: :desc)
+    User.all.where.not(id: user_followers.select(:id)).where.not(id: id).order(created_at: :desc)
   end
 
   def follow_user(user_id)
-    @follow = Following.create(follower_id: id, following_id: user_id)
+    @follow = Following.create(follower_id: id, followed_id: user_id)
     @user = User.find(user_id)
     @user.count_following += 1
     self.count_followers += 1
@@ -25,6 +25,6 @@ class User < ApplicationRecord
   end
 
   def already_follow?(user_id)
-    true if Following.find_by(follower_id: id, following_id: user_id)
+    true if Following.find_by(follower_id: id, followed_id: user_id)
   end
 end
