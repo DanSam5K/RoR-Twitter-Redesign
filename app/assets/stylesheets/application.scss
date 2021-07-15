@@ -173,3 +173,142 @@ body {
   }
 }
 
+.home-user {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .rightbar-home {
+    @include text;
+
+    font-size: $font-size;
+    width: 310px;
+    padding: 30px;
+    color: $font-color;
+    border-left: 1px solid $border-following;
+    border-bottom: 1px solid $border-following;
+
+    .user-section {
+      display: flex;
+
+      a {
+        cursor: pointer;
+      }
+
+      .middle-section {
+        margin: 0 0 0 $width;
+
+        .cover-img {
+          width: 100%;
+          height: 200px;
+          background-color: $new-tweets;
+          object-fit: cover;
+        }
+      }
+
+      .rightbar-user {
+        width: 310px;
+        border-left: 1px solid $border-following;
+      }
+    }
+
+    h4 {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-following;
+      font-size: $font-size;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 40px;
+      background-color: $new-tweets;
+      object-fit: cover;
+    }
+
+    div {
+      margin-top: 20px;
+    }
+
+    span {
+      margin-left: 20px;
+    }
+  }
+
+  .middle-section {
+    color: $font-color;
+    margin: $margin-middle;
+    padding: 0;
+
+    h4 {
+      font-size: 15px;
+    }
+
+    .tweet-section {
+      height: 150px;
+
+      @include tweets;
+
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 30px;
+
+      h4 {
+        margin: 0;
+      }
+    }
+
+    .tweet {
+      border: $border-following 1px solid;
+      height: 80px;
+      border-radius: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .new-tweets {
+      @include tweets;
+
+      margin: 30px;
+      flex-direction: column;
+      height: 100%;
+      color: $new-tweets;
+
+      h4 {
+        border-bottom: 1px solid $border-following;
+        font-weight: bold;
+        padding-bottom: 20px;
+        margin: 0;
+      }
+
+      .user-opinions {
+        display: flex;
+        margin-top: 20px;
+
+        .user-details {
+          display: flex;
+          flex-direction: column;
+          color: $font-color;
+
+          h5 {
+            margin-top: 0;
+            font-weight: bold;
+          }
+
+          a {
+            color: $font-color;
+          }
+        }
+
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 40px;
+          margin-right: 20px;
+          background-color: $new-tweets;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
