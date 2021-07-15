@@ -397,3 +397,35 @@ body {
     }
   }
 }
+
+.top-bar {
+  margin-left: $width;
+  background-image: $selector-blue;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  align-items: center;
+  color: $top-bar-font;
+
+  div > * {
+    margin-left: 20px;
+  }
+
+  img {
+    width: 40px;
+  }
+
+  div {
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+
+    a:hover {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
