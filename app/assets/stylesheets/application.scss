@@ -429,3 +429,77 @@ body {
     }
   }
 }
+
+.user-section {
+  display: flex;
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    color: $font-color;
+
+    a:hover {
+      cursor: pointer;
+    }
+
+    a {
+      font-weight: bold;
+      color: $font-color;
+    }
+  }
+
+  .middle-section {
+    margin: 0 0 0 $width;
+    padding: 0;
+
+    .cover-img {
+      width: 100%;
+      height: 200px;
+      background-color: $new-tweets;
+      object-fit: cover;
+    }
+
+    .new-tweets {
+      @include tweets;
+
+      margin: 30px;
+      flex-direction: column;
+      color: $new-tweets;
+
+      h4 {
+        border-bottom: 1px solid $border-following;
+        font-weight: bold;
+        padding-bottom: 20px;
+        margin: 0;
+      }
+
+      .user-det {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        img {
+          width: 60px;
+          height: 60px;
+          margin-right: 20px;
+          background-color: $new-tweets;
+          border: none;
+          object-fit: cover;
+        }
+
+        .user-name {
+          display: flex;
+          flex-direction: column;
+          color: $accent-color;
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  
+}
