@@ -312,3 +312,88 @@ body {
     }
   }
 }
+
+.sidebar {
+  background-color: $main-background;
+
+  @include text;
+
+  width: $width;
+  height: 100%;
+  position: fixed;
+
+  .profile-user {
+    display: flex;
+    background-color: $top-background;
+    padding: 20px;
+    font-size: $font-size;
+
+    h3 {
+      margin-left: 20px;
+      font-size: $font-size;
+    }
+  }
+
+  .image {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .profile-follows {
+    display: flex;
+    margin-bottom: 10px;
+    background-color: $top-background;
+    border-top: 3px solid $divisor-color;
+    justify-content: space-evenly;
+  }
+
+  .follows {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0;
+
+    h4 {
+      margin-bottom: 0;
+      color: white;
+      font-weight: bold;
+      font-size: $font-size;
+    }
+  }
+
+  .divisor {
+    width: 1px;
+    background-color: $divisor-color;
+  }
+
+  .profile-links {
+    display: flex;
+    flex-direction: column;
+    font-size: $font-size;
+    font-weight: 500px;
+
+    :hover {
+      background-image: $selector-blue;
+      color: white;
+    }
+
+    a {
+      color: $font-color;
+      text-decoration: none;
+      cursor: pointer;
+      margin-left: 10px;
+
+      :hover {
+        color: white;
+      }
+    }
+
+    div {
+      display: flex;
+      padding: 20px;
+      align-items: center;
+    }
+  }
+}
