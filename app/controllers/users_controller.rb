@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
 
-    @user.username = user_param[:username]
-    @user.fullname = user_param[:fullname]
+    @user.username = user_params[:username]
+    @user.fullname = user_params[:fullname]
 
     if @user.save
       flash[:success] = 'Profile updated!'

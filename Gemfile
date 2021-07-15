@@ -17,6 +17,7 @@ end
 # Gems for project
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 gem 'bulma-rails', '~> 0.9.1'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'gravatar_image_tag'

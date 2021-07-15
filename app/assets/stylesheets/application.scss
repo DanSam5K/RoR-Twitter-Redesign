@@ -31,3 +31,19 @@ $margin-middle: 0 0 0 $width;
 $font-size: 15px;
 $accent-color: #2a3544;
 $signin-background: #f3f4f7;
+
+@mixin text {
+    font-family: "Poppins", sans-serif;
+    color: $font-color;
+  }
+  
+@mixin tweets {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+}
+
+@mixin background {
+  background-color: #f0f1f1;
+}
