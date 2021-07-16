@@ -14,8 +14,8 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 // Variable color names
 $new-tweets: #6db0e4;
@@ -33,10 +33,10 @@ $accent-color: #2a3544;
 $signin-background: #f3f4f7;
 
 @mixin text {
-    font-family: "Poppins", sans-serif;
-    color: $font-color;
-  }
-  
+  font-family: "Poppins", sans-serif;
+  color: $font-color;
+}
+
 @mixin tweets {
   background-color: white;
   border-radius: 10px;
@@ -71,7 +71,6 @@ body {
   border: none;
   position: absolute;
 }
-
 
 .login {
   background-color: $signin-background;
