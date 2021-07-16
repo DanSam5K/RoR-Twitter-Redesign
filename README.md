@@ -18,9 +18,9 @@ This project puts your knowledge of Ruby on Rails module into practice through t
 
 ## Live Demo
 
-- [Live Demo]()
+- [Live Demo](https://nameless-waters-51440.herokuapp.com/)
 
-- [Video]()
+- [Video](https://www.loom.com/share/a671d30c3bcd44d4b81e3ccf16319e1c)
 
 
 ## Getting Started
