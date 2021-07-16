@@ -3,7 +3,7 @@
 
 This project puts your knowledge of Ruby on Rails module into practice through the Twitter-Redesign and app that allows user to login, view homepage/tweets, suggestion on who to follow, access their user profile and those of others, and creating tweets.
 
-![Login screenshot]() ![SignUp screenshot]() ![Home screenshot]() ![UserProfile screenshot]()
+![Login screenshot](app/assets/images/login.png) ![SignUp screenshot](app/assets/images/signup.png) ![Home screenshot](app/assets/images/home.png) ![UserProfile screenshot](app/assets/images/Userprofile.png)
 ## Built With
 
 - Ruby
@@ -95,4 +95,4 @@ Give a ⭐️ if you like this project! They're free . . . I think.
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) licensed.
