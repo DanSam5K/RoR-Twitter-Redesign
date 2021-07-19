@@ -15,4 +15,13 @@ module ApplicationHelper
                 alt: user.username, class: 'pr-2 rounded profile-img')
     end
   end
+
+  def like_or_dislike_btn(opinion)
+    like = Like.find_by(opinion_id: opinion.id, user_id: current_user.id)
+    if like
+      link_to('Dislike!', like_path(id: like.id, opinion_id: opinion.id), method: :delete)
+    else
+      link_to('Like!', login_path(opinion_id: opinion.id), method: :post)
+    end
+  end
 end

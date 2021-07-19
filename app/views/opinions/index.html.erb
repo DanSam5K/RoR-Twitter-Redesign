@@ -25,7 +25,8 @@
         <div class="user-opinions">
           <div class="user-details"> 
             <h5><%= link_to opinions.author.username, user_path(opinions.author.id) %></h5>
-            <span><%= opinions.text %></span>
+            <p class="card-text><span><%= opinions.text %></span> <%= like_or_dislike_btn(opinions)%> </p>
+          
           </div>
         </div>
       <% end %>
