@@ -21,6 +21,18 @@
           <span class="material-icons">create</span>
           <%= user.text_field :fullname, placeholder:"Full name", class:"username-field",  id:"fullname"%>
         </div>
+
+        <h5 class="border-bottom pb-2">Optional</h5>
+
+        <div class="form-group">
+          <%= user.label :photo, "Attach your profile photo" %>
+          <%= user.file_field :photo, class: "form-control"  %>
+        </div>
+
+       <div class="form-group">
+          <%= user.label :cover_image, "Attach your cover image" %>
+          <%= user.file_field :cover_image, class: "form-control"  %>
+       </div>
         <div>
           <span>Already have an account? <%= link_to "Login", login_path %></span>
           <%= user.submit "Sign up", class:'btn', id:"signup"%>
