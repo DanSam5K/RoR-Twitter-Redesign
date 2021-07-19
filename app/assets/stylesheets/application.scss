@@ -69,7 +69,10 @@ body {
   color: white;
   background-color: #50a4e2;
   border: none;
-  position: absolute;
+  position: relative;
+  display: block;
+  float: right;
+  margin-top: 5px;
 }
 
 .login {
