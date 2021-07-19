@@ -43,6 +43,7 @@ class UsersController < ApplicationController
 
   def follow_user
     current_user.follow_user(params[:id])
+    flash[:notice] = "You are now following #{followers.username}"
     redirect_to user_path(params[:id])
   end
 
