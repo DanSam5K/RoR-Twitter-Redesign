@@ -1,6 +1,16 @@
 <div class="home-user">
   <div class="middle-section container">
     <div class="tweet-section">
+    <% if notice.present? %>
+      <div class="notice">
+        <p> <%= notice %> </p>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert">
+        <p> <%= alert %> </p>
+      </div>
+    <% end %>
       <h4>What's Happening?</h4>
       <div>
         <%= form_for @opinion do |opinion| %>

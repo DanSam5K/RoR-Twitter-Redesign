@@ -10,7 +10,8 @@ class OpinionsController < ApplicationController
       current_user.save
       redirect_to home_path
     else
-      render 'show'
+      flash[:notice] = '280 characters in comment is the maximum allowed.'
+      redirect_to home_path
     end
   end
 
