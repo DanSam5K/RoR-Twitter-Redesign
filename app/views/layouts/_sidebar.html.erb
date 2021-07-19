@@ -25,6 +25,19 @@
             <span class="material-icons">person</span>
             <%= link_to "PROFILE", user_path(current_user.id) %>
         </div>
+        <div>
+            <span class="material-icons">search</span>
+            <%= link_to "SEARCH", edit_user_path(current_user.id) %>
+        </div>
+        <div>
+            <span class="material-icons">link</span>
+            <%= link_to "CONNECT", user_path(current_user.id) %>
+        </div>
+        <div>
+            <span class="material-icons">logout</span>
+            <a><%= link_to "LOGOUT", logout_path, method: 'DELETE' %></a>
+        </div>
+
     </div>
     
     </div>
@@ -37,6 +50,7 @@
             <span class="material-icons">local_post_office</span>
             <span class="material-icons">search</span>
             <span class="material-icons">settings</span>
-            <a><%= link_to "Logout", logout_path, method: 'DELETE' %></a>
         </div>
 </div>
+
+
