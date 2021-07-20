@@ -18,7 +18,6 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
-
 // Variable color names
 $new-tweets: #6db0e4;
 $border-following: #cdcfd4;
@@ -228,15 +227,13 @@ body {
         padding-bottom: 20px;
         margin-bottom: 5px;
         color: $new-tweets;
-
       }
 
       h6 {
         font-weight: bold;
-        margin-top: 0px;
+        margin-top: 0;
         font-size: 16px;
       }
-
 
       .user-opinions {
         display: flex;
