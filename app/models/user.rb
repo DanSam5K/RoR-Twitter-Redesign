@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   has_many :likes, dependent: :destroy
 
+  has_one_attached :photo
+  has_one_attached :cover_image
+
+
   def not_following
     User.all.where.not(id: user_followers.select(:id)).where.not(id: id).order(created_at: :desc)
   end
