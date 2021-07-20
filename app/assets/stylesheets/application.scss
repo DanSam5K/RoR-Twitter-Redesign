@@ -105,6 +105,7 @@ body {
 
     #user_photo {
       width: 100%;
+      margin-top: 10px;
     }
 
     #user_coverimage {
@@ -219,41 +220,36 @@ body {
       margin: 30px;
       flex-direction: column;
       height: 100%;
-      color: $new-tweets;
+      // color: $new-tweets;
 
       h4 {
         border-bottom: 1px solid $border-following;
         font-weight: bold;
         padding-bottom: 20px;
-        margin: 0;
+        margin-bottom: 5px;
+        color: $new-tweets;
+
       }
+
+      h6 {
+        font-weight: bold;
+        margin-top: 0px;
+        font-size: 16px;
+      }
+
 
       .user-opinions {
         display: flex;
-        margin-top: 20px;
+        margin-top: 10px;
 
         .user-details {
           display: flex;
           flex-direction: column;
           color: $font-color;
 
-          h5 {
-            margin-top: 0;
-            font-weight: bold;
-          }
-
           a {
             color: $font-color;
           }
-        }
-
-        img {
-          width: 60px;
-          height: 60px;
-          border-radius: 40px;
-          margin-right: 20px;
-          background-color: $new-tweets;
-          object-fit: cover;
         }
       }
     }
