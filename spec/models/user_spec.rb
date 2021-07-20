@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
         user = User.reflect_on_association(:created_opinions)
         expect(user.macro).to eq(:has_many)
       end
-  
+
       it 'has many likes' do
         user = User.reflect_on_association(:likes)
         expect(user.macro).to eq(:has_many)
