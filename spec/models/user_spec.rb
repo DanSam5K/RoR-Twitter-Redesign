@@ -1,49 +1,66 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user1) do
-    User.new(username: 'user1', fullname: 'name1',
-             photo: 'link', cover_image: 'link')
-  end
-  let(:user2) do
-    User.new(username: 'user2', fullname: 'name2',
-             photo: 'link', cover_image: 'link')
-  end
-  describe 'validates user attributes' do
-    it 'validates if the user is valid' do
-      expect(user1.valid?).to eql(true)
+  # include Warden::Test::Helpers
+  # Warden.test_mode!
+  let(:current_user) { User.create!(name: 'Tester', email: 'test@example.com', password: 'f4k3p455w0rd') }
+  let(:user) { User.create(name: 'JohnDoe', email: 'johndoe@example.com', password: '123456') }
+  let(:user2) { User.create(name: 'Ying Yang', email: 'yingyang@example.com', password: '123456')}
+  describe 'validations' do
+    describe 'username' do
+      it 'must be present' do
+        user = described_class.new(username: 'John', fullname: 'John Emma')
+        expect(user).to be_valid
+        user.username = nil
+        expect(user).to_not be_valid
+      end
     end
-    it 'validates if the username is present' do
-      user1.username = ' '
-      expect(user1.valid?).not_to eql(true)
+    describe 'fullname' do
+      it 'must be present' do
+        user = described_class.new(username: 'John', fullname: 'John Son')
+        expect(user).to be_valid
+        user.fullname = nil
+        expect(user).to_not be_valid
+      end
     end
-    it 'validates if the fullname is present' do
-      user1.fullname = ' '
-      expect(user1.valid?).not_to eql(true)
-    end
-    it 'validates if the name is not too long' do
-      user1.fullname = 'a' * 61
-      expect(user1.valid?).not_to eql(true)
-    end
-    it 'validates if the usernames are unique' do
-      duplicate_user = user1.dup
-      user1.save
-      expect(duplicate_user.valid?).not_to eql(true)
-    end
-    it 'validates if the usernames are saved as lower-case' do
-      mixed_case_username = 'UsErNaME'
-      user1.username = mixed_case_username
-      user1.save
-      expect(mixed_case_username.downcase == user1.reload.username).to eql(true)
-    end
-  end
 
-  describe 'validates Follow associations' do
-    it 'validates if user is added to users followings' do
-      user1.save
-      user2.save
-      Following.create(follower_id: user1.id, followed_id: user2.id)
-      expect(user1.already_follow?(user2.id)).to eql(true)
+    describe 'username' do
+      it 'must be present' do
+        user = described_class.new(username: 'John', fullname: 'John Emma')
+        expect(user).to be_valid
+        user.username = 'John'
+        expect(user).to be_valid
+      end
+    end
+    describe 'fullname' do
+      it 'must be present' do
+        user = described_class.new(username: 'John', fullname: 'John Son')
+        expect(user).to be_valid
+        user.fullname = 'John Son'
+        expect(user).to be_valid
+      end
+    end
+
+    describe 'associations' do
+      it 'has many opinions' do
+        user = User.reflect_on_association(:created_opinions)
+        expect(user.macro).to eq(:has_many)
+      end
+  
+      it 'has many likes' do
+        user = User.reflect_on_association(:likes)
+        expect(user.macro).to eq(:has_many)
+      end
+
+      it 'has many followers' do
+        user = User.reflect_on_association(:followers)
+        expect(user.macro).to eq(:has_many)
+      end
+
+      it 'has many followed' do
+        user = User.reflect_on_association(:followed)
+        expect(user.macro).to eq(:has_many)
+      end
     end
   end
 end
