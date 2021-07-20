@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # include Warden::Test::Helpers
-  # Warden.test_mode!
-  let(:current_user) { User.create!(name: 'Tester', email: 'test@example.com', password: 'f4k3p455w0rd') }
-  let(:user) { User.create(name: 'JohnDoe', email: 'johndoe@example.com', password: '123456') }
-  let(:user2) { User.create(name: 'Ying Yang', email: 'yingyang@example.com', password: '123456')}
+  let(:user) { User.create(username: 'JohnDoe', fullname: 'John Doe') }
   describe 'validations' do
     describe 'username' do
       it 'must be present' do

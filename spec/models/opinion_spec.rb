@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Opinion, type: :model do
+  let(:user1) { User.create!(username: 'user1', fullname: 'name1', photo: 'link', coverimage: 'link')}
+  let(:opinion1) { Opinion.create(author_id: user1.id, text: 'tweet1') }
   describe 'associations' do
     it 'has many likes' do
       users = User.reflect_on_association(:created_opinions)
