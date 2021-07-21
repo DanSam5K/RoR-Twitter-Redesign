@@ -5,6 +5,9 @@
       <h4>ALL TWEETS</h4>
       <% @user.created_opinions.ordered_by_most_recent.all.each  do |opinion| %>
         <div class="user-det">
+          <div>
+            <%= show_photo(opinion.author) %>
+          </div>
           <div class="user-name">
             <span><%= @user.username %></span>
             <span><%= opinion.text%></span>
