@@ -1,0 +1,75 @@
+<div class="home-user">
+  <div class="middle-section container">
+    <div class="tweet-section">
+    <% if notice.present? %>
+      <div class="notice">
+        <p> <%= notice %> </p>
+      </div>
+    <% end %>
+    <% if alert.present? %>
+      <div class="alert">
+        <p> <%= alert %> </p>
+      </div>
+    <% end %>
+      <h4>What's Happening?</h4>      
+        <%= form_for @opinion do |opinion| %>
+          <%= opinion.text_area :text, class:"tweet", id:"text" %>
+          <%= opinion.submit "Tweet", class: "btn text-btn" %>
+        <% end %>
+      </div>
+    <div class="new-tweets">
+      <h4> NEW OPINIONS </h4>
+      <div class="user-details">
+      <% Opinion.newsfeed_opinions.each do |opinions|%>
+      <div class="user-opinions">
+          <div>
+            <%= show_photo(opinions.author) %>
+          </div>
+          <div class="tweet-content">
+              <h6><strong><%= link_to opinions.author.fullname, class: "text-dark" %> </strong></h6>
+              <div class="user-opinions">
+                  <p class="card-text"><%= opinions.text %> 
+                  <span class='post-date'> <%= opinions.created_at.strftime("%Y/%m/%d") %> </span> 
+                  <%= like_or_dislike_btn(opinions) %> </p>
+              </div>
+          </div>
+      </div>
+      <% end %>
+      </div>      
+    </div>
+  </div>
+  <div class="rightbar-home">
+    <h4>WHO TO FOLLOW</h4>
+    <% current_user.not_following.each do |f| %>
+      <div class="user-section">
+        <div class="user-photo">
+          <%= avatar_for(f) %>
+        </div>  
+        <div class="user-details">
+          <%= link_to f.username, user_path(f.id) %>
+          <%= f.fullname %>
+        </div>
+      </div>
+    <% end %>
+    <div class="account-type">
+        <small class="text-gray">
+            <a href="#">Popular accounts</a> |
+            <a href="#">Find friends</a>
+        </small>
+    </div>
+
+    <h6 class="text-gray border-top border-bottom pt-3 pb-3 mt-3 mb-3">TRENDING</h6>
+
+    <p><a href="#" class="text-gray"> #InternationalWomensDay </a></p>
+    <p><a href="#" class="text-gray"> Technology </a></p>
+    <p><a href="#" class="text-gray"> #WomenInStem </a></p>
+    <p><a href="#" class="text-gray"> DanSam </a></p>
+  </div>
+  
+</div>
+
+
+
+
+
+
