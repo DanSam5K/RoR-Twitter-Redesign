@@ -5,7 +5,7 @@ This project was intended to put my knowledge of Ruby on Rails module into pract
 
 I had the option to personalise the website and style it my own way. The end goal however was to create anything that someone could share opinions about with people who follow them and vice versa. The design I have emulated is by Design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 
-![Login screenshot](app/assets/images/login.png) ![SignUp screenshot](app/assets/images/signup.png) ![Home screenshot](app/assets/images/home.png) ![UserProfile screenshot](app/assets/images/Userprofile.png)
+![Login screenshot](app/assets/images/login.png) ![SignUp screenshot](app/assets/images/signuppage.png) ![Home screenshot](app/assets/images/homepage.png) ![UserProfile screenshot](app/assets/images/profilepage.png)
 ## Built With
 
 - Ruby
@@ -23,6 +23,7 @@ I had the option to personalise the website and style it my own way. The end goa
 - [Live Demo](https://nameless-waters-51440.herokuapp.com/)
 
 - [Video](https://www.loom.com/share/a671d30c3bcd44d4b81e3ccf16319e1c)
+- [Video 2](https://www.loom.com/share/0bf59866dbfa43259054a3aced0b0400)
 
 
 ## Getting Started
