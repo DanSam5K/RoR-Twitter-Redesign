@@ -11,23 +11,23 @@
         <p> <%= alert %> </p>
       </div>
     <% end %>
-      <h4>What's Happening?</h4>
-      <div>
+      <h4>What's Happening?</h4>      
         <%= form_for @opinion do |opinion| %>
-          <%= opinion.text_field :text, class:"tweet", id:"text"%>
+          <%= opinion.text_area :text, class:"tweet", id:"text" %>
           <%= opinion.submit "Tweet", class: "btn text-btn" %>
         <% end %>
       </div>
-    </div>
     <div class="new-tweets">
       <h4> NEW OPINIONS </h4>
       <div class="user-details">
       <% Opinion.newsfeed_opinions.each do |opinions|%>
       <div class="user-opinions">
-          <%= show_photo(opinions.author)%>
+          <div>
+            <%= show_photo(opinions.author) %>
+          </div>
           <div class="tweet-content">
               <h6><strong><%= link_to opinions.author.fullname, user_path(opinions.author.username), class: "text-dark" %> </strong></h6>
-              <div class="user-opinions d-flex flex-row justify-content-around">
+              <div class="user-opinions">
                   <p class="card-text"><%= opinions.text %> 
                   <span class='post-date'> <%= opinions.created_at.strftime("%Y/%m/%d") %> </span> 
                   <%= like_or_dislike_btn(opinions) %> </p>
