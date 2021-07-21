@@ -207,7 +207,7 @@ body {
 
     .tweet {
       border: $border-following 1px solid;
-      height: 80px;
+      height: 70px;
       border-radius: 10px;
       padding: 10px;
       width: 100%;
@@ -219,7 +219,6 @@ body {
       margin: 30px;
       flex-direction: column;
       height: 100%;
-      // color: $new-tweets;
 
       h4 {
         border-bottom: 1px solid $border-following;
@@ -238,6 +237,7 @@ body {
       .user-opinions {
         display: flex;
         margin-top: 10px;
+        word-break: normal;
 
         .user-details {
           display: flex;
