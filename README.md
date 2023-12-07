@@ -30,7 +30,7 @@ I had the option to personalise the website and style it my own way. The end goa
 
 ### Prerequisites
 
-To get this project up and running locally, you must already have ruby and rails plus the necessary gems installed on your computer
+To get this project up and running locally, you must already have ruby and rails plus the necessary gems installed on your computer work environment 
 
 ### Install
 
